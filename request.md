@@ -95,3 +95,36 @@ export default function (url, params, methodType = 'GET') {
 }
 
 ```
+
+
+> 这些是创建请求时可以用的配置选项。只有 url 是必需的。如果没有指定 method，请求将默认使用 GET 方法。
+-------------------------------------------
+外部引用方法
+
+api.js
+
+```javascript
+import request from "./request";
+
+
+/**
+ * @测试Api
+ * 
+ */
+
+export const TestApi = (data, params,) => request(`/api/${data}/TestApi`, params, 'POST')
+
+
+```
+
+调用接口
+
+```javascript
+  UserLogin('data内容', {Name:'这里是对象'}).then(e=>{
+    consloe.log('then',e)
+  }).catch(e=>{
+    consloe.log('catch',e)
+
+  })
+
+```
