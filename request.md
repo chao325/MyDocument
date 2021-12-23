@@ -117,7 +117,7 @@ export const TestApi = (data, params,) => request(`/api/${data}/TestApi`, params
 
 ```
 
-调用接口
+调用接口方法
 
 ```javascript
   UserLogin('data内容', {Name:'这里是对象'}).then(e=>{
@@ -128,3 +128,6 @@ export const TestApi = (data, params,) => request(`/api/${data}/TestApi`, params
   })
 
 ```
+-------------------------------
+
+上面就是基本用法，错误处理也只写了基本的，返回的code也因人而异，不一定都是1000也有可能200
