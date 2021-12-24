@@ -2,7 +2,7 @@
 >参考地址 https://zh-hans.reactjs.org/
 
 
-## 什么是Vue
+## 什么是React
 
 <h3>React</h3>
 用于构建用户界面的 JavaScript 库
