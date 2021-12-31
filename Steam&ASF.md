@@ -21,6 +21,16 @@
 
 
 
+
+
+
+
+
+教程参考：https://cangshui.net/2431.html
+
+
+
+
 -------------
 ##  config文件夹配置参数
 
@@ -77,6 +87,8 @@
 
   Linux 部署就比较麻烦了（新人而言） 我乱七八糟搞了一下午，才勉强完事。如果专门挂ASF强烈建议买个Windows服务器啊！！！！即使ssh断连了，也不会停止运行。
 
+  21/12/30 补充下Linux可以使用 nohup 后台挂起 断联了也没关系。就是Windows可视化界面高，不用搞什么后台运行。只要服务器不关闭，就行
+
   等会写，累了
 
   开始
@@ -95,7 +107,10 @@
     yum install docker
   ```
 
-    -----------
+-----------
+
+    
+
 之后启动docker，命令为
 
     ```
@@ -147,18 +162,18 @@
 
 ### 安裝 .NET 环境
 
-    ```
-       rpm --import https://packages.microsoft.com/keys/microsoft.asc
+  ```
+       sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
-      sh -c 'echo -e "[packages-microsoft-com-prod]\nname=packages-microsoft-com-prod \nbaseurl=https://packages.microsoft.com/yumrepos/microsoft-rhel7.      3-prod\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/dotnetdev.repo'
+      sudo sh -c 'echo -e "[packages-microsoft-com-prod]\nname=packages-microsoft-com-prod \nbaseurl=https://packages.microsoft.com/yumrepos/microsoft-rhel7.3-prod\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/dotnetdev.repo';
 
       yum update
 
       yum install libunwind libicu
 
-      yum install aspnetcore-runtime-5.0
+      yum -y install dotnet-sdk-2.0.0
 
-    ```
+ ```
 
 
 ### 安装下载ASF
@@ -266,6 +281,9 @@ cd ./ascf
 
 
 ### 启动ASF
+
+
+解压出来的ArchiSteamFarm文件默认是没有执行权限的，试图运行的时候会报 Permission Denied 错误，直接chmod +x ArchiSteamFarm提供运行程序
 
 ```
 cd /
