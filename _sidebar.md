@@ -34,6 +34,13 @@
 *  😀 开源CMS【Halo】使用
    * [Halo的使用方法](Halo.md)
 
+*  🐂 Android-Studio Flutter安装配置教程
+   * [Android-Studio的安装配置及其他环境](android&flutter.md)
+
+
+
+*  🥁 Dart类型替换
+   * [Centos配置ASF](dartType.md)
 
 
 
