@@ -1,4 +1,14 @@
+# Dart几个比较重要的概念
+> StatefulWidget  有状态 - 常用可以管理子控件刷新
+> StatelessWidget 无状态 - 不需要管理子控件状态刷新
+> AndroidStudio有语法糖，有状态stful，无状态stless。拼写即可
 
+
+
+
+
+
+----------------------------------
 ## Java类型转Dart示例
 
 ### 转换之前Java
