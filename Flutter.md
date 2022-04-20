@@ -50,3 +50,40 @@
 	可以用于Column等组件中,用于按照自适应组件的方式占据空间
 		Spacer();   内部就是返回一个Expanded的SizedBox的空间布局
 		Spacer(flex:n); 
+
+
+--------------------------
+
+
+圆形
+
+
+```dart
+
+   Container(
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: Colors.white,
+          width: 2,
+        ),
+      ),
+   )
+
+```
+
+
+
+-----------------------
+
+
+时间格式化
+
+```dart
+import 'package:intl/intl.dart';
+DateFormat inputFormat = DateFormat("yyyy-MM-dd HH:mm:ss");
+DateTime dateTime = inputFormat.parse("18-08-2019 20:59:59");
+DateFormat outputFormat = DateFormat("HH:mm:ss");
+String dateInString = outputFormat.format(dateTime); //  20:59:59
+
+```
