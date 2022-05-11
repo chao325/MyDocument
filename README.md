@@ -9,4 +9,3 @@
 
 > docsify serve docs
 
-需要注意的是，要回到上级目录执行这个命令
