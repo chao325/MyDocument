@@ -1,6 +1,7 @@
 
 
-![logo](https://docsify.js.org/_media/icon.svg)
+![logo](./images/logo/logo.jpg)
+<img src="./images/logo/logo.jpg" width="60px" >
 
 # 团队技术指南
 
