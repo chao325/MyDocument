@@ -113,10 +113,10 @@ git reset --hard b69a4
 ```
 git本地回退到指定版本后，按以往的提交顺序进行提交时会出现这个问题:
 ```javascript
-Username for 'http://172.16.15.19': lbp
-To http://172.16.15.19/cop2/cop_task.git
+Username for 'http://xxxx': lbp
+To http://xxxx/cop2/cop_task.git
  ! [rejected]        master -> master (non-fast-forward)
-error: failed to push some refs to 'http://172.16.15.19/cop2/cop_task.git'
+error: failed to push some refs to 'http://xxxx/cop2/cop_task.git'
 hint: Updates were rejected because the tip of your current branch is behind
 hint: its remote counterpart. Integrate the remote changes (e.g.
 hint: 'git pull ...') before pushing again.
