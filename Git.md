@@ -55,3 +55,77 @@ git push
 
 ```
 >Tip：如果你想单独上传一个文件可以使用 `git add xxx.js`
+
+## 代码如何回滚
+
+!> 注意：此方法只适用于菜狗本人。目前未发现任何对代码的不良影响。
+
+已经push上去的代码！发现有错误，不想留下瑕疵。或者push错分支了怎么办。只能回滚咯.
+
+***
+
+### 找到所需版本
+
+首先我们需要找到你想要回滚的版本号，可打开你的git提交记录，或者在命令行输入`git log` (顺序一般是从初始版本开始展示) 。
+
+结构代码类似如下：
+
+```javascript
+commit b69a4ced352ec9d5bd9dbf0036a052f9812854fb (HEAD -> master, origin/master)
+Author: zhuhualong <zhuhualong@beyondcent.com>
+Date:   Thu Oct 12 18:29:53 2017 +0800
+ 
+    新增了xxx页面
+ 
+commit eb3378a32d36c03825e444002e541a2d12af274c
+Author: yangze <yangze@beyongcent.com>
+Date:   Wed Oct 11 10:01:05 2017 +0800
+ 
+    这是commit提交说明
+ 
+commit bd2a381042868a331730ba549065ed8aaba817e9
+Merge: 5c4a2ff f0d82fa
+Author: yangze <yangze@beyongcent.com>
+Date:   Wed Oct 11 10:00:18 2017 +0800
+ 
+    解决了xxxbug
+ 
+commit f0d82fa46a818525cf042a157e0fc889e0c813f6
+Author: wangxi@beyondcent.com <wangxi@beyondcent.com>
+Date:   Tue Oct 10 20:48:56 2017 +0800
+```
+
+
+然后我们几下 commit 前面的一长串版本号。一般只需要用到，前四位。
+假如我们要回滚到`新增了xxx页面` 那么他的版本号就是`b69a4`
+
+***
+### 撤销之前提交
+
+然后输入命令:
+```javascript
+git reset --hard b69a4
+```
+
+继续键入：
+```javascript
+ git push origin master
+```
+git本地回退到指定版本后，按以往的提交顺序进行提交时会出现这个问题:
+```javascript
+Username for 'http://172.16.15.19': lbp
+To http://172.16.15.19/cop2/cop_task.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'http://172.16.15.19/cop2/cop_task.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+同时你也会看见VScode左下角有几个最新代码需要pull。这是因为gitlab已经在你提交历史前面了，你无法把push过的再次push进行覆盖，这个时候加个参数–force就行。
+
+```javascript
+ git push origin master --force
+ //这样就大功告成了。
+```
