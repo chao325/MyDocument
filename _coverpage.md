@@ -1,16 +1,14 @@
 
 
-![logo](./images/logo/logo.jpg)
-<img src="./images/logo/logo.jpg" width="60px" >
 
-# 团队技术指南
+<img src="./images/logo/logo.jpg" width="15%"style="border-radius: 50%;"  />
 
-> 使用Vue全家桶+Node.js搭建的小型全栈项目
-- 本文档是作者从事 ```Node.js Developer``` 以来的学习历程，旨在为大家提供一个较详细的学习教程，侧重点更倾向于 Node.js 服务端所涉及的技术栈，如果本文能为您得到帮助，请给予支持！ （文档现已支持离线模式）
+# 吃个甘蔗嚼一年
 
-* 前端框架：vue-cli、vue-router、axios、vuex、React
-* UI类库：Mint-UI、Vant、Element、Ant Design
-* 后端数据接口：-----
+> 熟练使用React、Vue、Flutter、Taro、Ant Design、Element、Vant、Antv G2、Echarts、Weapp
+- 本文档是作者是一名现役上校CS老兵，熟悉各种打法，道具路径实时计算。如果本文能为您得到帮助，请给予支持！ （文档现已支持离线模式）
+
+* 爱好：🏀 、Steam、Epic、GTAV、CSGO、极限竞速：地平线4
 
 [GitHub](https://github.com/chao325/AnswerQuestion/tree/master)
 [开始阅读](README.md)
