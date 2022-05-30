@@ -37,7 +37,7 @@ increase(context){ context.commit('increase');//触发的是Mutations}
 >Modules 模块化vuex，可以让每一个模块拥有自己的state、mutation、action、getters,使得结构非常清晰，方便管理。 下面代码我并没有使用Modules。因为问题太多，不会
 
 
-```javascript
+```javascript | pure
 export default {
   state,
   mutations,
@@ -65,7 +65,7 @@ yarn add vuex
 在一个模块化的打包系统中，您必须显式地通过 Vue.use() 来安装 Vuex：
 
 
-```javascript
+```javascript | pure
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -96,7 +96,7 @@ Vue.use(Vuex)
 index.js
 
 
-```javascript
+```javascript | pure
 import Vue from 'vue'
 import Vuex from 'vuex'
 // import user from './modules/user.js'
@@ -150,7 +150,7 @@ export default store;
 ## main.js 配置 
 ---------------------------------------------
 
-```javascript
+```javascript | pure
 import store from 'xxx/xxx/store';//状态管理 
 
 new Vue({
@@ -166,7 +166,7 @@ new Vue({
 
 ## 用法
 
-```javascript
+```javascript | pure
 import { mapGetters } from 'vuex';
 <h1>{{ $store.state.user.appid }}</h1> //标签取值。this可以不写
 

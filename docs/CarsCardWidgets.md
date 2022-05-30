@@ -1,3 +1,6 @@
+## 🤑 Flutter项目组件解释
+
+
 ## 前情提要
 
 初次使用Flutter页面布局或者其他问题，多多少少可能都会有一点。如遇到并解决，会及时更新。
@@ -40,7 +43,7 @@
 
 > 全部代码
 
-```dart
+```dart | pure
     return Container(
       decoration: BoxDecoration(
         color: Color(0xfff2f2f2),
@@ -193,7 +196,7 @@
 
 代码
 
-```dart
+```dart | pure
 //首先定义一个Container 然后给他加上decoration (修饰器属性)
 
 Container(
@@ -218,7 +221,7 @@ Container(
 预约按钮这边也是费劲了心思，一开始我选择用`padding`,发现会撑起其他元素，后来又选择用`margin`，还是一样的问题，会顶起其他元素。苦思冥想，选择使用`Stack`和`Positioned`组件，奈何我页面布局写的太拉。`Positioned`总是出问题，有时候还没效果。最后！我选择了使用`Align`，因为他正好适合我这种<b>只想简单的调整一个子元素在父元素中的位置</b>，
 
 
-```dart
+```dart | pure
  Align(
   widthFactor: 2,
   heightFactor: 2,
@@ -243,7 +246,7 @@ Container(
 这个布局很简单了就，我上面提到`Row`他能支持多种布局。详情请移步至官网API。我这里用到的是`crossAxisAlignment: CrossAxisAlignment.start,`  就是两个元素，一左一右布局。Text文本点击我用的是`GestureDetector` 组件。它是手势识别的组件，可以识别点击、双击、长按事件、拖动、缩放等手势。这里我用到了点击。
 
 
-```dart
+```dart | pure
   GestureDetector(
     child: Text(
       '进入地图 >>',

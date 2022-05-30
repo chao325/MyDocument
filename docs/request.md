@@ -1,3 +1,6 @@
+
+## 🌹 网络请求封装
+
 # Axios请求
 
 > 参考连接 https://www.axios-http.cn/docs/intro
@@ -55,7 +58,7 @@
 
 request.js
 
-```javascript
+```javascript | pure
 import axios from 'axios'
 
 export default function (url, params, methodType = 'GET') {
@@ -103,7 +106,7 @@ export default function (url, params, methodType = 'GET') {
 
 api.js
 
-```javascript
+```javascript | pure
 import request from "./request";
 
 
@@ -119,7 +122,7 @@ export const TestApi = (data, params,) => request(`/api/${data}/TestApi`, params
 
 调用接口方法
 
-```javascript
+```javascript | pure
   UserLogin('data内容', {Name:'这里是对象'}).then(e=>{
     consloe.log('then',e)
   }).catch(e=>{

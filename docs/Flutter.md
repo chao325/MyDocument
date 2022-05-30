@@ -1,3 +1,6 @@
+## 🍟 Flutter
+
+
 ## Flutter介绍
 
 > 没空写
@@ -58,7 +61,7 @@
 圆形
 
 
-```dart
+```dart | pure
 
    Container(
       decoration: BoxDecoration(
@@ -79,7 +82,7 @@
 
 时间格式化
 
-```dart
+```dart | pure
 import 'package:intl/intl.dart';
 DateFormat inputFormat = DateFormat("yyyy-MM-dd HH:mm:ss");
 DateTime dateTime = inputFormat.parse("18-08-2019 20:59:59");

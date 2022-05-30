@@ -16,7 +16,7 @@ flutter_easyrefresh: ^0.0.0 #版本请移步上述地址。懒人可用2.2.1
 ### 页面使用
 
 创建一个Dart文件，创建一个`StatefulWidget `类。import插件
-```dart
+```dart | pure
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 ```
@@ -28,7 +28,7 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 ```
 
 剩下就是自由发挥的地方了。根据业务需求来写，我这边只简单的用到了刷新加载，所以我定义俩数组和其余参数就可以。代码如下：
-```dart
+```dart | pure
   final jobList = Rx<List<Job>>([]);
   final newJobList = Rx<List<Job>>([]);
   var pageIndex = 1; //页数
@@ -77,7 +77,7 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 这里建议先看一下官方文档的使用教程，他有三种方法，我这个是比较基础的。写的有点乱。对着官网写法看，会比较容易些。
 
 官方写法：
-```dart
+```dart | pure
  // 方式一
   EasyRefresh(
     child: ScrollView(),
@@ -94,7 +94,7 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 我的写法：
 
-```dart
+```dart | pure
 EasyRefresh(
         controller: _controller,
         firstRefresh: true,

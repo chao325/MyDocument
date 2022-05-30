@@ -1,3 +1,6 @@
+## 📑 React
+
+
 # 介绍React
 >参考地址 https://zh-hans.reactjs.org/
 
@@ -27,7 +30,7 @@ React 使创建交互式 UI 变得轻而易举。为你应用的每一个状态�
 
 ### class组件
 
-```javascript
+```javascript | pure
 class ProfilePage extends React.Component {
   render() {
     const props = this.props;
@@ -57,7 +60,7 @@ export default ProfilePage;   //导出组件 别人就可以import了
 
 ### 函数式组件
 
-```javascript
+```javascript | pure
 
 export default (props) => {
   const showMessage = () => {

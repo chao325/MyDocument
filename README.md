@@ -1,11 +1,16 @@
-# Headline
+# 吃个甘蔗嚼一年
 
-> An awesome project.
+## Getting Started
 
-<img src="https://img-blog.csdnimg.cn/img_convert/7a53a50cdebb97d717ffbf645a958a0f.gif">
+<img src="./images/logo/logo.jpg" width="15%"style="border-radius: 50%;"  />
 
+# 吃个甘蔗嚼一年
 
-## 启动
+> 熟练使用React、Vue、Flutter、Taro、Ant Design、Element、Vant、Antv G2、Echarts、Weapp
+- 本文档是作者是一名现役上校CS老兵，熟悉各种打法，道具路径实时计算。如果本文能为您得到帮助，请给予支持！ （文档现已支持离线模式）
 
-> docsify serve docs
+* 爱好：🏀 、Steam、Epic、GTAV、CSGO、极限竞速：地平线4
 
+[GitHub](https://github.com/chao325/AnswerQuestion/tree/master)
+[开始阅读](README.md)
+```

@@ -1,3 +1,5 @@
+## 🐖 Git的基本使用 
+
 # Git & GitHub 速览
 
 > Git  中文名：开源的分布式版本控制系统,可以有效、高速地处理从很小到非常大的项目版本管理。
@@ -70,7 +72,7 @@ git push
 
 结构代码类似如下：
 
-```javascript
+```javascript | pure | pure
 commit b69a4ced352ec9d5bd9dbf0036a052f9812854fb (HEAD -> master, origin/master)
 Author: zhuhualong <zhuhualong@beyondcent.com>
 Date:   Thu Oct 12 18:29:53 2017 +0800
@@ -103,16 +105,16 @@ Date:   Tue Oct 10 20:48:56 2017 +0800
 ### 撤销之前提交
 
 然后输入命令:
-```javascript
+```javascript | pure
 git reset --hard b69a4
 ```
 
 继续键入：
-```javascript
+```javascript | pure
  git push origin master
 ```
 git本地回退到指定版本后，按以往的提交顺序进行提交时会出现这个问题:
-```javascript
+```javascript | pure
 Username for 'http://xxxx': lbp
 To http://xxxx/cop2/cop_task.git
  ! [rejected]        master -> master (non-fast-forward)
@@ -125,7 +127,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 同时你也会看见VScode左下角有几个最新代码需要pull。这是因为gitlab已经在你提交历史前面了，你无法把push过的再次push进行覆盖，这个时候加个参数–force就行。
 
-```javascript
+```javascript | pure
  git push origin master --force
  //这样就大功告成了。
 ```
