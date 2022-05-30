@@ -2,15 +2,32 @@
 
 ## Getting Started
 
-<img src="./images/logo/logo.jpg" width="15%"style="border-radius: 50%;"  />
+Install dependencies,
 
-# 吃个甘蔗嚼一年
+```bash
+$ npm i
+```
 
-> 熟练使用React、Vue、Flutter、Taro、Ant Design、Element、Vant、Antv G2、Echarts、Weapp
-- 本文档是作者是一名现役上校CS老兵，熟悉各种打法，道具路径实时计算。如果本文能为您得到帮助，请给予支持！ （文档现已支持离线模式）
+Start the dev server,
 
-* 爱好：🏀 、Steam、Epic、GTAV、CSGO、极限竞速：地平线4
+```bash
+$ npm start
+```
 
-[GitHub](https://github.com/chao325/AnswerQuestion/tree/master)
-[开始阅读](README.md)
+Build documentation,
+
+```bash
+$ npm run docs:build
+```
+
+Run test,
+
+```bash
+$ npm test
+```
+
+Build library via `father-build`,
+
+```bash
+$ npm run build
 ```
