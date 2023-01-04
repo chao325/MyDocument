@@ -1,7 +1,7 @@
 # 吃个甘蔗嚼一年
 
 ## Getting Started
-
+一个小笔记~
 Install dependencies,
 
 ```bash
