@@ -1,136 +1,135 @@
+## 网络请求封装
 
-## 🌹 网络请求封装
-
-# Axios请求
+# Axios 请求
 
 > 参考连接 https://www.axios-http.cn/docs/intro
 
 ![logo](https://docsify.js.org/_media/icon.svg ':size=10%')
 
+## Axios 介绍
 
+Axios 是一个基于 promise 网络请求库，作用于 node.js 和浏览器中。
 
+## 特性
 
-## Axios介绍
-
- Axios 是一个基于 promise 网络请求库，作用于node.js 和浏览器中。
-
- 
- ## 特性
 - 从浏览器创建 XMLHttpRequests
 - 从 node.js 创建 http 请求
 - 支持 Promise API
 - 拦截请求和响应
 - 转换请求和响应数据
 - 取消请求
-- 自动转换JSON数据
-- 客户端支持防御XSRF
----------------------------------------------
+- 自动转换 JSON 数据
+- 客户端支持防御 XSRF
 
- ## 安装 
+---
 
-  使用NPM
+## 安装
 
-  ```
-  npm install axios
-  ```
+使用 NPM
 
-  使用YARN
+```
+npm install axios
+```
 
-  ```
-  yarn add axios
-  ```
-  > 其余方法安装详见 https://www.axios-http.cn/docs/intro
+使用 YARN
+
+```
+yarn add axios
+```
+
+> 其余方法安装详见 https://www.axios-http.cn/docs/intro
 
 ## 结构目录
+
 以下代码使用的文件结构。依据个人喜好设定
 
-  ```
-  //api 可分成多个模块例如 Login.js UsuerInfo.js ...
+```
+//api 可分成多个模块例如 Login.js UsuerInfo.js ...
 
 └── src
-    └── util
-        ├── api.js 
-        └── request.js
-  ```
+  └── util
+      ├── api.js
+      └── request.js
+```
 
----------------------------------------------
+---
+
 ## 贴代码
 
 request.js
 
 ```javascript | pure
-import axios from 'axios'
+import axios from 'axios';
 
 export default function (url, params, methodType = 'GET') {
   return new Promise((resolve, reject) => {
+    axios
+      .request({
+        url: url,
+        method: methodType,
+        data: params,
+        headers: { 'X-xxxKey': 'Value' }, // header设置
+        timeout: 1000 * 60,
+      })
+      .then((res) => {
+        const { code, message, data, token } = res.data;
 
-    axios.request({
-      url: url,
-      method: methodType,
-      data: params,
-      headers: {'X-xxxKey':'Value'}, // header设置
-      timeout: 1000 * 60,
-    }).then(res => {
-      const { code, message, data, token } = res.data
+        console.log('🚀 res', res);
+        if (code === 1000) {
+          resolve(data);
+        } else {
+          Message.error(message);
+        }
+      })
+      .catch((err) => {
+        const message = err.message || err.errMsg || err;
+        console.log('🚀 错误~ err', err);
+        Message.error('请求错误', err);
 
-      console.log("🚀 res", res)
-      if (code === 1000) {
-        resolve(data)
-      } else {
-        Message.error(message)
-      }
-
-    }).catch(err => {
-      const message = err.message || err.errMsg || err
-      console.log("🚀 错误~ err", err)
-      Message.error('请求错误', err)
-
-
-      if (err.message.includes('timeout')) {
-        // 请求超时
-        Message.error('请求超时')
-      }
-      reject(message)
-    }).finally(() => {
-      // 请求结束
-    })
-  })
+        if (err.message.includes('timeout')) {
+          // 请求超时
+          Message.error('请求超时');
+        }
+        reject(message);
+      })
+      .finally(() => {
+        // 请求结束
+      });
+  });
 }
-
 ```
 
-
 > 这些是创建请求时可以用的配置选项。只有 url 是必需的。如果没有指定 method，请求将默认使用 GET 方法。
--------------------------------------------
+
+---
+
 外部引用方法
 
 api.js
 
 ```javascript | pure
-import request from "./request";
-
+import request from './request';
 
 /**
  * @测试Api
- * 
+ *
  */
 
-export const TestApi = (data, params,) => request(`/api/${data}/TestApi`, params, 'POST')
-
-
+export const TestApi = (data, params) => request(`/api/${data}/TestApi`, params, 'POST');
 ```
 
 调用接口方法
 
 ```javascript | pure
-  UserLogin('data内容', {Name:'这里是对象'}).then(e=>{
-    consloe.log('then',e)
-  }).catch(e=>{
-    consloe.log('catch',e)
-
+UserLogin('data内容', { Name: '这里是对象' })
+  .then((e) => {
+    consloe.log('then', e);
   })
-
+  .catch((e) => {
+    consloe.log('catch', e);
+  });
 ```
--------------------------------
 
-上面就是基本用法，错误处理也只写了基本的，返回的code也因人而异，不一定都是1000也有可能200
+---
+
+上面就是基本用法，错误处理也只写了基本的，返回的 code 也因人而异，不一定都是 1000 也有可能 200

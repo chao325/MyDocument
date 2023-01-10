@@ -1,4 +1,3 @@
-
 ## Foo
 
 Demo:
@@ -9,5 +8,3 @@ import { Foo } from 'myDumi';
 
 export default () => <Foo title="Test" />;
 ```
-
-测试页~

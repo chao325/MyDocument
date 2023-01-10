@@ -1,45 +1,31 @@
-## 🤑 Flutter项目组件解释
-
+## Flutter 项目组件解释
 
 ## 前情提要
 
-初次使用Flutter页面布局或者其他问题，多多少少可能都会有一点。如遇到并解决，会及时更新。
+初次使用 Flutter 页面布局或者其他问题，多多少少可能都会有一点。如遇到并解决，会及时更新。
 
+我经常去的几个网站[330 多个组件使用介绍][1]、[Flutter 入门介绍学习][2]。这两个网站我个人感觉，前者偏向组件使用和语法介绍，而后者更适合新手来学习比较重要的概念。组件并不是很全。建议配合“食用”。
 
-我经常去的几个网站[330多个组件使用介绍][1]、[Flutter入门介绍学习][2]。这两个网站我个人感觉，前者偏向组件使用和语法介绍，而后者更适合新手来学习比较重要的概念。组件并不是很全。建议配合“食用”。
+[1]: http://www.laomengit.com/
+[2]: https://book.flutterchina.club/
 
-[1]:http://www.laomengit.com/
-[2]:https://book.flutterchina.club/
+> 建议：我下文提到的任何组件 API 都可以通过以上两个网站去寻找学习！！！！！！！！官网个人觉得新人看起来稍有不妥，特别是我这种英语很垃圾的人，机翻根本看不懂。
 
-
-> 建议：我下文提到的任何组件API都可以通过以上两个网站去寻找学习！！！！！！！！官网个人觉得新人看起来稍有不妥，特别是我这种英语很垃圾的人，机翻根本看不懂。
-
-
------------------------------------
-
+---
 
 ## 先看蓝湖设计图
 
-
-
 ![cars组件](https://zcsuper-image-1301565650.cos.ap-nanjing.myqcloud.com/MyWordPhotos/CarsCard.png)
 
+### 下面是我初次分解的结构。
 
-
- ### 下面是我初次分解的结构。
-
-
- ![cars组件](https://zcsuper-image-1301565650.cos.ap-nanjing.myqcloud.com/MyWordPhotos/carsTTT.jpg)
-
-
+![cars组件](https://zcsuper-image-1301565650.cos.ap-nanjing.myqcloud.com/MyWordPhotos/carsTTT.jpg)
 
 我觉得前期页面结构基础不想好，画的时候会出现很多很多问题，有一些样式结构不生效，那么很有可能是你的页面结构有问题！亲身经历，改一下结构样式全生效了。
 
+如果绘画页面有出现黑黄警告条纹的时候，那么代表你的像素溢出了。它不像 HTML，溢出了也很难发觉。而 Flutter 会警告你,这个时候你只需要打开 Android Studio 的 Flutter DevTools 功能。查看你的结构问题。基本改改高宽就能解决。再不济结构改变下。
 
-如果绘画页面有出现黑黄警告条纹的时候，那么代表你的像素溢出了。它不像HTML，溢出了也很难发觉。而Flutter会警告你,这个时候你只需要打开Android Studio的Flutter DevTools 功能。查看你的结构问题。基本改改高宽就能解决。再不济结构改变下。
-
- ![像素溢出错误](https://book.flutterchina.club/assets/img/5-16.f1f2b680.png)
-
+![像素溢出错误](https://book.flutterchina.club/assets/img/5-16.f1f2b680.png)
 
 > 全部代码
 
@@ -175,20 +161,17 @@
 
 ## 整体布局解释
 
-
-
-> 这里面的结构布局还是有点乱的。基本就是使用Container包裹一个Column或者Row，以我新手理解。垂直多元素布局使用Column。想有CSS里面那种Flex布局的话使用Row就足够了。Flutter里面也有Flex组件，但我用的少，感觉上面两个就够用了。下面是官方介绍。
-
+> 这里面的结构布局还是有点乱的。基本就是使用 Container 包裹一个 Column 或者 Row，以我新手理解。垂直多元素布局使用 Column。想有 CSS 里面那种 Flex 布局的话使用 Row 就足够了。Flutter 里面也有 Flex 组件，但我用的少，感觉上面两个就够用了。下面是官方介绍。
 
 ### Row
 
-`Row`可以沿水平方向排列其子Widget。
+`Row`可以沿水平方向排列其子 Widget。
 
 ### Column
 
 `Column`可以在垂直方向排列其子组件。参数和`Row`一样，不同的是布局方向为垂直，主轴纵轴正好相反。
 
-### Container 
+### Container
 
 感觉`Container`像是一个万能组件，什么都可以。这边我说一下他指定边框线条的样式写法。（百度了好多才找到！其他都是写四条边框的。而我需要的是单独一条边框。）
 
@@ -211,15 +194,11 @@ Container(
 )
 ```
 
------------------------------
-
-
+---
 
 ## 预约按钮
 
-
 预约按钮这边也是费劲了心思，一开始我选择用`padding`,发现会撑起其他元素，后来又选择用`margin`，还是一样的问题，会顶起其他元素。苦思冥想，选择使用`Stack`和`Positioned`组件，奈何我页面布局写的太拉。`Positioned`总是出问题，有时候还没效果。最后！我选择了使用`Align`，因为他正好适合我这种<b>只想简单的调整一个子元素在父元素中的位置</b>，
-
 
 ```dart | pure
  Align(
@@ -232,19 +211,15 @@ Container(
 )
 ```
 
-`Alignment`他有两个属性x、y，分别表示在水平和垂直方向的偏移。
+`Alignment`他有两个属性 x、y，分别表示在水平和垂直方向的偏移。
 
-!> 注意：`widthFactor`,`heightFactor` 这两个参数一定要大于1.0 哪怕1.1也好，因为`Alignment`是要和他们俩相乘的(Alignment.x*childWidth/2+childWidth/2, Alignment.y*childHeight/2+childHeight/2)  这是他的公式。
+!> 注意：`widthFactor`,`heightFactor` 这两个参数一定要大于 1.0 哪怕 1.1 也好，因为`Alignment`是要和他们俩相乘的(Alignment.x*childWidth/2+childWidth/2, Alignment.y*childHeight/2+childHeight/2) 这是他的公式。
 
-
-
-----------------------------------------
-
+---
 
 ## 进入地图文字点击
 
-这个布局很简单了就，我上面提到`Row`他能支持多种布局。详情请移步至官网API。我这里用到的是`crossAxisAlignment: CrossAxisAlignment.start,`  就是两个元素，一左一右布局。Text文本点击我用的是`GestureDetector` 组件。它是手势识别的组件，可以识别点击、双击、长按事件、拖动、缩放等手势。这里我用到了点击。
-
+这个布局很简单了就，我上面提到`Row`他能支持多种布局。详情请移步至官网 API。我这里用到的是`crossAxisAlignment: CrossAxisAlignment.start,` 就是两个元素，一左一右布局。Text 文本点击我用的是`GestureDetector` 组件。它是手势识别的组件，可以识别点击、双击、长按事件、拖动、缩放等手势。这里我用到了点击。
 
 ```dart | pure
   GestureDetector(
@@ -259,8 +234,5 @@ Container(
     )
 
 ```
-
-
-
 
 End
